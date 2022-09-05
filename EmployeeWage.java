@@ -13,14 +13,15 @@ public class EmployeeWage {
     }
     public int calc(){
         double empcheck =Math.floor(Math.random()*10)%3;
-        if(empcheck==part_time) {
-            emphrs = 4;
-        }
-        else if(empcheck==full_time) {
-            emphrs = 8;
-        }
-        else{
-            emphrs=0;
+        switch(empcheck) {
+            case 1:
+                emphrs = 4;
+                break;
+            case 2:
+                emphrs = 8;
+                break;
+            default:
+                emphrs=0;
         }
         empwage=emphrs*emp_rate_per_hour;
         return empwage;
